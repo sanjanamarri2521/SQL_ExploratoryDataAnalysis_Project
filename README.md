@@ -54,6 +54,95 @@ This analysis explores multiple dimensions of the dataset to answer relevant bus
 - Top 10 customers by revenue
 - 3 customers with the fewest orders
 
+### 7. Change Over Time Analysis
+- Sales trends analyzed by **year**, **month**, and **custom formats** to uncover seasonality and performance shifts
+- Identified annual and monthly performance highs and lows
+- Key SQL functions used:
+  - `YEAR()`, `MONTH()` – Extract date parts for grouping
+  - `DATETRUNC()` – Monthly truncation for timeline grouping
+  - `FORMAT()` – Display `yyyy-MMM` format for reporting
+  - Aggregations: `SUM()`, `COUNT(DISTINCT)`
+
+**Sample Insights**:
+- 📈 *2013* had the highest total sales, customers, and items sold
+- 🎄 *December* consistently showed peak performance, suggesting seasonal effects (e.g., holidays)
+
+### 8. Cumulative Analysis
+- Analyzed **running totals** and **moving averages** to observe sales progression and pricing trends over time
+- Cumulative sales calculated per month within each year
+- Moving average of prices computed to identify long-term pricing trends
+
+**Key SQL functions used**:
+- `SUM(...) OVER (PARTITION BY ... ORDER BY ...)` – Running total of sales
+- `AVG(...) OVER (PARTITION BY ... ORDER BY ...)` – Moving average of price
+- `DATETRUNC()` – For monthly aggregation
+
+**Sample Insights**:
+- 📉 Sales dropped significantly in the final year (*2014*) compared to earlier years
+- 💲 Average price steadily declined after *2012*, indicating possible discounting or market shift
+
+### 9. Performance Analysis
+- Compared yearly sales of each product against their historical average and previous year’s sales
+- Helps identify products that are improving, declining, or staying consistent in performance
+
+**Key SQL functions used**:
+- `AVG(...) OVER (PARTITION BY ...)` – To compute product's average yearly sales
+- `LAG(...) OVER (PARTITION BY ... ORDER BY ...)` – To compare with previous year’s sales
+- `CASE WHEN` – For classifying changes (e.g., Increase, Decrease, Above/Below Average)
+
+**Sample Insights**:
+- 📈 Some products showed consistent **year-over-year growth**
+- 📉 Others dropped **below their average** or declined compared to previous years
+
+### 10. Part-to-Whole Analysis
+- Evaluated the contribution of each product category to overall sales
+- Helps in identifying dominant product lines and revenue concentration
+
+**Key SQL functions used**:
+- `SUM(...) OVER ()` – Total across entire result set
+- `ROUND(...)`, `CAST(...)` – For percentage calculation
+- `CONCAT(...)` – To format percentage values
+
+**Sample Insight**:
+- 🚲 The **Bikes** category accounted for **96%** of total sales, indicating a highly skewed product portfolio
+
+### 11. Data Segmentation
+- Categorized products into cost-based segments and grouped customers by spending and longevity
+
+**Key SQL functions used**:
+- `CASE WHEN` – For defining segmentation logic
+- `DATEDIFF(...)` – To calculate customer lifespan
+- `GROUP BY`, `COUNT(...)` – For frequency distribution of segments
+
+**Sample Insights**:
+- 🧾 Most products fall in the **“Below 100”** cost segment
+- 👤 Majority of customers are **“New”**, indicating limited long-term customer retention
+
+### 12. Reporting
+
+- Developed two consolidated reports: one for customers and one for products
+- Created using SQL views for scalable, reusable reporting logic
+
+#### 🧍 Customer Report
+- Aggregates customer behavior and demographics
+- Includes:
+  - Total orders, quantity, sales, lifespan
+  - Customer segments (VIP, Regular, New)
+  - Age grouping, recency, average order value (AOV), and average monthly spend
+
+#### 📦 Product Report
+- Summarizes product performance and engagement
+- Includes:
+  - Total customers, orders, quantity sold, sales, lifespan
+  - Product segments (High Performer, Mid Range, Low Performer)
+  - Recency, average order revenue (AOR), and average monthly revenue
+
+**Key SQL Techniques**:
+- `CASE WHEN` for segmentation logic
+- `DATEDIFF(...)`, `AVG(...)`, `SUM(...)` for KPIs
+- SQL Views (`CREATE VIEW`) for modularized reporting
+
+
 ---
 
 ##  Tools Used
