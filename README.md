@@ -64,8 +64,8 @@ This analysis explores multiple dimensions of the dataset to answer relevant bus
   - Aggregations: `SUM()`, `COUNT(DISTINCT)`
 
 **Sample Insights**:
-- 📈 *2013* had the highest total sales, customers, and items sold
-- 🎄 *December* consistently showed peak performance, suggesting seasonal effects (e.g., holidays)
+-  *2013* had the highest total sales, customers, and items sold
+-  *December* consistently showed peak performance, suggesting seasonal effects (e.g., holidays)
 
 ### 8. Cumulative Analysis
 - Analyzed **running totals** and **moving averages** to observe sales progression and pricing trends over time
@@ -78,8 +78,8 @@ This analysis explores multiple dimensions of the dataset to answer relevant bus
 - `DATETRUNC()` – For monthly aggregation
 
 **Sample Insights**:
-- 📉 Sales dropped significantly in the final year (*2014*) compared to earlier years
-- 💲 Average price steadily declined after *2012*, indicating possible discounting or market shift
+-  Sales dropped significantly in the final year (*2014*) compared to earlier years
+-  Average price steadily declined after *2012*, indicating possible discounting or market shift
 
 ### 9. Performance Analysis
 - Compared yearly sales of each product against their historical average and previous year’s sales
@@ -91,8 +91,8 @@ This analysis explores multiple dimensions of the dataset to answer relevant bus
 - `CASE WHEN` – For classifying changes (e.g., Increase, Decrease, Above/Below Average)
 
 **Sample Insights**:
-- 📈 Some products showed consistent **year-over-year growth**
-- 📉 Others dropped **below their average** or declined compared to previous years
+- Some products showed consistent **year-over-year growth**
+- Others dropped **below their average** or declined compared to previous years
 
 ### 10. Part-to-Whole Analysis
 - Evaluated the contribution of each product category to overall sales
@@ -104,7 +104,7 @@ This analysis explores multiple dimensions of the dataset to answer relevant bus
 - `CONCAT(...)` – To format percentage values
 
 **Sample Insight**:
-- 🚲 The **Bikes** category accounted for **96%** of total sales, indicating a highly skewed product portfolio
+-  The **Bikes** category accounted for **96%** of total sales, indicating a highly skewed product portfolio
 
 ### 11. Data Segmentation
 - Categorized products into cost-based segments and grouped customers by spending and longevity
@@ -115,22 +115,22 @@ This analysis explores multiple dimensions of the dataset to answer relevant bus
 - `GROUP BY`, `COUNT(...)` – For frequency distribution of segments
 
 **Sample Insights**:
-- 🧾 Most products fall in the **“Below 100”** cost segment
-- 👤 Majority of customers are **“New”**, indicating limited long-term customer retention
+-  Most products fall in the **“Below 100”** cost segment
+-  Majority of customers are **“New”**, indicating limited long-term customer retention
 
 ### 12. Reporting
 
 - Developed two consolidated reports: one for customers and one for products
 - Created using SQL views for scalable, reusable reporting logic
 
-#### 🧍 Customer Report
+####  Customer Report
 - Aggregates customer behavior and demographics
 - Includes:
   - Total orders, quantity, sales, lifespan
   - Customer segments (VIP, Regular, New)
   - Age grouping, recency, average order value (AOV), and average monthly spend
 
-#### 📦 Product Report
+####  Product Report
 - Summarizes product performance and engagement
 - Includes:
   - Total customers, orders, quantity sold, sales, lifespan
